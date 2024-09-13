@@ -13,7 +13,10 @@ package edu.cmu.cs.cs214.rec04;
 public class InheritanceSortedIntList extends SortedIntList {
     // Write your implementation below with API documentation
 
-    private int addedElems = 0;
+    private int addedElems;
+    public InheritanceSortedIntList() {
+        this.addedElems = 0;
+    }
     /**
      * Adds the specified int to the list.
      *
@@ -26,6 +29,7 @@ public class InheritanceSortedIntList extends SortedIntList {
         if (super.add(num)) {
             success = true;
             this.addedElems += 1;
+            System.out.println(this.addedElems);
         }
     
         return success;
@@ -42,7 +46,6 @@ public class InheritanceSortedIntList extends SortedIntList {
         boolean success = false;
         if (super.addAll(list)) {
             success = true;
-            this.addedElems += list.size();
         }
     
         return success;
